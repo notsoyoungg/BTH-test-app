@@ -14,6 +14,7 @@ function addAttributeFields(id) {
     attributeNameInput.name = "attribute_name[]";
     attributeNameInput.placeholder = "Имя атрибута";
     attributeNameInput.classList.add("form-control");
+    attributeNameInput.required = true;
 
     var attributeValueInput = document.createElement("input");
     attributeValueInput.type = "text";
@@ -49,77 +50,9 @@ function removeAttributeFields(attributeContainer) {
 }
 
 
-// function addAttributeFields(id) {
-//     // Создаем новые элементы для имени и значения атрибута с использованием jQuery
-//     let attributeNameInput = $('<input>', {
-//         type: 'text',
-//         name: 'attribute_name[]',
-//         placeholder: 'Имя атрибута',
-//         class: 'form-control',
-//     });
-//
-//     let attributeValueInput = $('<input>', {
-//         type: 'text',
-//         name: 'attribute_value[]',
-//         placeholder: 'Значение атрибута',
-//         class: 'form-control mx-1',
-//         required: true,
-//     });
-//
-//     // Создаем кнопку для удаления поля с использованием jQuery
-//     let removeButton = $('<button>', {
-//         type: 'button',
-//         html: '<i class="fa-solid fa-trash"></i>',
-//         class: 'btn btn-danger mx-1',
-//         click: function() {
-//             removeAttributeFields(attributeContainer);
-//         },
-//     });
-//
-//     // Создаем контейнер для хранения полей атрибутов и кнопки удаления
-//     let attributeContainer = $('<div>', {
-//         class: 'd-flex mt-2',
-//     });
-//
-//     // Добавляем новые элементы в контейнер с использованием jQuery
-//     attributeContainer.append(attributeNameInput, attributeValueInput, removeButton);
-//
-//     // Добавляем контейнер в раздел для атрибутов с использованием jQuery
-//     $('#' + id).append(attributeContainer);
-// }
-//
-// function removeAttributeFields(attributeContainer) {
-//     // Удаляем весь контейнер с использованием jQuery
-//     attributeContainer.remove();
-// }
-
 window.addEventListener('load', function() {
-    $('.show-product').on('click', function (event) {
-        event.preventDefault();
-
-        var url = $(this).data('url');
-
-        $.ajax({
-            url: url,
-            method: 'GET',
-            success: function (response) {
-                if (response && response.body) {
-                    $('#modal').html(response.body);
-                    $('#modal_show').modal('show');
-                } else {
-                    console.error('API вернул неверный ответ:', response);
-                }
-            },
-            error: function (error) {
-                console.error('Ошибка при запросе к API', error);
-            }
-        });
-    });
-
-
     $('.edit-product').on('click', function (event) {
         event.preventDefault();
-        console.log('dhslghslkH');
 
         var url = $(this).data('url');
 

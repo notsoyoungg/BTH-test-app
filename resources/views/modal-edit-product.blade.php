@@ -34,8 +34,6 @@
 
                     <a class="btn-link" onclick="addAttributeFields('additionalAttributes')">Добавить атрибуты</a>
 
-                    <!-- Поля для атрибутов будут добавлены здесь -->
-
                     <div id="additionalAttributes">
                         @if($product->data)
                             @foreach(json_decode($product->data) as $key => $value)

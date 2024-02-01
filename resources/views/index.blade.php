@@ -46,21 +46,11 @@
                         @endif
                     </div>
                 </div>
-
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
-                        <ul class="pagination">
-
-                            {{-- {{ $ag->appends(request()->all())->links('pagination::bootstrap-4') }}--}}
-                        </ul>
-                    </div>
-                </div>
             </div>
 
             <!-- /.table-responsive -->
         </div>
     </div>
+    @include('modal-create-product')
 @endsection
 
